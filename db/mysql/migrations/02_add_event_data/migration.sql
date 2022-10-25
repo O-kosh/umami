@@ -1,14 +1,14 @@
--- DropForeignKey
-ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_1`;
-ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_2`;
+-- -- DropForeignKey
+-- ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_1`;
+-- ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_2`;
 
-DROP INDEX `event_created_at_idx` ON `event`;
-DROP INDEX `event_session_id_idx` ON `event`;
-DROP INDEX `event_website_id_idx` ON `event`;
+-- DROP INDEX `event_created_at_idx` ON `event`;
+-- DROP INDEX `event_session_id_idx` ON `event`;
+-- DROP INDEX `event_website_id_idx` ON `event`;
 
-CREATE INDEX `event_old_created_at_idx` ON `event` (created_at);
-CREATE INDEX `event_old_session_id_idx` ON `event` (session_id);
-CREATE INDEX `event_old_website_id_idx` ON `event` (website_id);
+-- CREATE INDEX `event_old_created_at_idx` ON `event` (created_at);
+-- CREATE INDEX `event_old_session_id_idx` ON `event` (session_id);
+-- CREATE INDEX `event_old_website_id_idx` ON `event` (website_id);
 
 -- RenameTable
 RENAME TABLE `event` TO `_event_old`;
